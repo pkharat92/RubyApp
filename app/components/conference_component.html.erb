@@ -1,0 +1,6 @@
+<div class="conference">
+    <%= render(DivisionComponent.new(division: @conference["north"])) %>
+    <%= render(DivisionComponent.new(division: @conference["west"])) %>
+    <%= render(DivisionComponent.new(division: @conference["east"])) %>
+    <%= render(DivisionComponent.new(division: @conference["south"])) %>
+</div>

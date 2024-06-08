@@ -1,0 +1,47 @@
+#home, .content, .content > div, .content > div > div,
+.conference, .division {
+    display: flex;
+}
+
+#home {
+    justify-content: center;
+}
+
+p {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.content {
+    margin-top: 1.5em;
+}
+
+.content > div {
+    justify-content: center;
+}
+
+.content > div > div {
+    flex-direction: column;
+    width: 60%;
+}
+
+.conference {
+    flex-direction: column;
+}
+
+.image {
+    border-radius: 20px 20px 0 20px;
+    background: rgba(22, 136, 199, .5);
+    margin: 5px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.image:hover, .selected {
+    background: rgba(2, 120, 190, .75);
+}
+
+.image img {
+    width: 50%;
+}

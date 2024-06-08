@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2025 NFL Draft Trade Evaluator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "home", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <div id="header">
+      <%= image_tag "la_chargers_logo.svg", alt: "LA Chargers logo", id: "chargers_logo" %>
+      <div><b>2025</b> NFL Draft Trade Evaluator</div>
+    </div>
+    <%= yield %>
+  </body>
+</html>
