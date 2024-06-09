@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-    static targets = [ "team" ]
+    static targets = [ "team", "button" ]
 
     initialize() {
         this.selectedTeams = {
@@ -32,5 +32,7 @@ export default class extends Controller {
             this.selectedTeams[grid] = team
             event.currentTarget.classList.add("selected")
         }
+
+        this.buttonTarget.disabled = this.selectedTeams[1] == "" || this.selectedTeams[2] == ""
     }
 }
