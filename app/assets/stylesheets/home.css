@@ -1,10 +1,11 @@
 #home, .content, .content > div, .content > div > div,
-.conference, .division {
+.conference, .division, .footer {
     display: flex;
 }
 
 #home {
     justify-content: center;
+    flex-direction: column;
 }
 
 p {
@@ -44,4 +45,14 @@ p {
 
 .image img {
     width: 50%;
+}
+
+.footer {
+    justify-content: right;
+    width: 90%;
+    margin-top: 2em;
+}
+
+.footer button {
+    font-size: 16px;
 }
