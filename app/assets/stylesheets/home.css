@@ -39,7 +39,7 @@ p {
     justify-content: center;
 }
 
-.image:hover, .selected {
+.selected {
     background: rgba(2, 120, 190, .75);
 }
 
@@ -55,4 +55,8 @@ p {
 
 .footer button {
     font-size: 16px;
+}
+
+.image, button {
+    cursor: pointer;
 }
