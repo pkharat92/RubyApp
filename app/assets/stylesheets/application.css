@@ -41,7 +41,7 @@ body {
     font-size: 2em;
     letter-spacing: 5px;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 #chargers_logo {
@@ -56,3 +56,28 @@ body {
     align-self: center;
 }
 
+@media screen and (width <= 1024px) and (height > 600px) {
+    html {
+        overflow: scroll;
+    }
+
+    body { 
+        background: #12A8E1;
+    }
+
+    #header {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2em;
+    }
+
+    #header div {
+        padding: 0;
+        border: none;
+        text-align: center;
+    }
+
+    #chargers_logo {
+        width: 40%;
+    }
+}
