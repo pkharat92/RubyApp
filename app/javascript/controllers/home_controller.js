@@ -35,4 +35,16 @@ export default class extends Controller {
 
         this.buttonTarget.disabled = this.selectedTeams[1] == "" || this.selectedTeams[2] == ""
     }
+
+    getDraftPicks() {
+        $.ajax({
+          url: "./home/getDraftPicks",
+          data: {
+            teamA: this.selectedTeams[1],
+            teamB: this.selectedTeams[2]
+          },
+          contentType: "application/json",
+          error: (e) => { console.log(e) }
+        })
+    }
 }
