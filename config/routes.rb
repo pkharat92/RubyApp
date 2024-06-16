@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   get "/home", to: "home#index"
+  get "/home/getDraftPicks", to: "home#getDraftPicks"
 
   # Defines the root path route ("/")
   # root "posts#index"
