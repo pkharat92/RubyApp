@@ -1,21 +1,24 @@
-<div id="home" data-controller="home">
-    <div class="content">
-        <div>
+<form data-controller="home" action="/draftpicks">
+    <input type="hidden" name="selected-team-1" value="" />
+    <input type="hidden" name="selected-team-2" value="" />
+    <div id="home">
+        <div class="content">
             <div>
-                <p>Select a team:</p>
-                <%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 1))) %>
+                <div>
+                    <p>Select a team:</p>
+                    <%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 1))) %>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Select a team:</p>
+                    <%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 2))) %>
+                </div>
             </div>
         </div>
-        <div>
-            <div>
-                <p>Select a team:</p>
-                <%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 2))) %>
-            </div>
+        <div class="footer">
+            <button type="submit" data-home-target="button" disabled>Go To Next Page</button>
         </div>
     </div>
-    <div class="footer">
-        <button type="button" disabled
-            data-home-target="button" data-action="click->home#getDraftPicks">Go To Next Page</button>
-    </div>
-</div>
+</form>
 

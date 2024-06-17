@@ -20,31 +20,20 @@ export default class extends Controller {
         if (this.selectedTeams[grid] == team) {
             event.currentTarget.classList.remove("selected")
             this.selectedTeams[grid] = ""
+            document.querySelector(`input[name='selected-team-${grid}']`).setAttribute("value", "")
         }
         else {
             var selectedItem = this.teamTargets.find(element => element.classList.contains("selected") && element.id.endsWith(grid))
 
             if (selectedItem !== undefined) {
                 selectedItem.classList.remove("selected")
-                this.selectedTeams[grid] = ""
             }
 
             this.selectedTeams[grid] = team
             event.currentTarget.classList.add("selected")
+            document.querySelector(`input[name='selected-team-${grid}']`).setAttribute("value", team)
         }
 
         this.buttonTarget.disabled = this.selectedTeams[1] == "" || this.selectedTeams[2] == ""
-    }
-
-    getDraftPicks() {
-        $.ajax({
-          url: "./home/getDraftPicks",
-          data: {
-            teamA: this.selectedTeams[1],
-            teamB: this.selectedTeams[2]
-          },
-          contentType: "application/json",
-          error: (e) => { console.log(e) }
-        })
     }
 }
