@@ -1,3 +1,27 @@
-<div>
-    <h1>This is a test</h1>
-</div>
+<form data-controller="draft_picks" action="">
+    <input type="hidden" name="selected-draft-picks-team-1" value="" />
+    <input type="hidden" name="selected-draft-picks-team-2" value="" />
+    <div id="home">
+        <div class="content">
+            <div>
+                <div>
+                    <p>Select your pick(s):</p>
+                    <p><%= @selectedTeam1 %></p>
+                    <!--<%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 1))) %>-->
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Select your pick(s):</p>
+                    <p><%= @selectedTeam2 %></p>
+                    <!--<%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 2))) %>-->
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="submit" data-home-target="button" disabled>Submit</button>
+            <a href="/home"><button type="button" data-home-target="button">Start a New Trade</button></a>
+        </div>
+    </div>
+</form>
+
