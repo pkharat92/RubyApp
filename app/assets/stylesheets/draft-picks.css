@@ -1,9 +1,9 @@
-#home, .content, .content > div, .content > div > div,
-.conference, .division, .footer {
+#draft-picks, .content, .content > div, .content > div > div,
+ .footer {
     display: flex;
 }
 
-#home {
+#draft-picks {
     justify-content: center;
     flex-direction: column;
 }
@@ -31,21 +31,6 @@ p {
     flex-direction: column;
 }
 
-.image {
-    border-radius: 20px 20px 0 20px;
-    background: rgba(22, 136, 199, .5);
-    margin: 5px 5px;
-    display: flex;
-    justify-content: center;
-}
-
-.selected {
-    background: rgba(2, 120, 190, .75);
-}
-
-.image img {
-    width: 50%;
-}
 
 .footer {
     justify-content: right;
@@ -57,7 +42,7 @@ p {
     font-size: 1em;
 }
 
-.image, button {
+button {
     cursor: pointer;
 }
 
