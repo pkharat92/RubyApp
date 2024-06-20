@@ -2,25 +2,45 @@
     <input type="hidden" name="selected-draft-picks-team-1" value="" />
     <input type="hidden" name="selected-draft-picks-team-2" value="" />
     <div id="draft-picks">
-        <div class="content">
-            <div>
+        <div class="draft-picks-content">
+            <div style="margin-right: 100px;">
                 <div>
                     <p>Select your pick(s):</p>
                     <p><%= @selectedTeam1 %></p>
+                    <div id="checkboxes">
+                        <div>
+                            <input name="checkbox1" type="checkbox" />
+                            <label for="checkbox1">Pick 1</label>
+                        </div>
+                        <div>
+                            <input name="checkbox1" type="checkbox" />
+                            <label for="checkbox1">Pick 33</label>
+                        </div>
+                    </div>
                     <!--<%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 1))) %>-->
                 </div>
             </div>
             <div>
-                <div>
+                <div style="margin-left: 100px;">
                     <p>Select your pick(s):</p>
                     <p><%= @selectedTeam2 %></p>
+                    <div id="checkboxes">
+                        <div>
+                            <input name="checkbox3" type="checkbox" />
+                            <label for="checkbox3">Pick 2</label>
+                        </div>
+                        <div>
+                            <input name="checkbox4" type="checkbox" />
+                            <label for="checkbox4">Pick 34</label>
+                        </div>
+                    </div>
                     <!--<%= render(TeamLogosContainerComponent.new(teams: getTeams(grid: 2))) %>-->
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <button type="submit" data-home-target="button" disabled>Submit</button>
+        <div class="draft-picks-footer">
             <a href="/home"><button type="button">Start a New Trade</button></a>
+            <button type="submit" data-home-target="button" disabled>Submit</button>
         </div>
     </div>
 </form>

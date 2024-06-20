@@ -1,5 +1,5 @@
-#home, .content, .content > div, .content > div > div,
-.conference, .division, .footer {
+#home, .home-content, .home-content > div, .home-content > div > div,
+.conference, .division, .home-footer {
     display: flex;
 }
 
@@ -14,15 +14,15 @@ p {
     font-weight: bold;
 }
 
-.content {
+.home-content {
     margin-top: 1.5em;
 }
 
-.content > div {
+.home-content > div {
     justify-content: center;
 }
 
-.content > div > div {
+.home-content > div > div {
     flex-direction: column;
     width: 60%;
 }
@@ -47,13 +47,13 @@ p {
     width: 50%;
 }
 
-.footer {
+.home-footer {
     justify-content: right;
     width: 90%;
     margin-top: 2em;
 }
 
-.footer button {
+.home-footer button {
     font-size: 1em;
 }
 
@@ -62,16 +62,16 @@ p {
 }
 
 @media screen and (width <= 1024px) and (height > 600px) {
-    .content {
+    .home-content {
         flex-direction: column;
         margin-top: 0;
     }
 
-    .content > div {
+    .home-content > div {
         margin-top: 1em;
     }
 
-    .content > div > div {
+    .home-content > div > div {
         width: 80%;
     }
 
@@ -79,21 +79,21 @@ p {
         font-size: .75em;
     }
 
-    .footer {
+    .home-footer {
         margin: 1em 0;
     }
 
-    .footer button {
+    .home-footer button {
         font-size: .75em;
     }
 }
 
 @media screen and (width < 1024px) and (height < 600px) {
-    .footer {
+    .home-footer {
         margin: 1em 0;
     }
 
-    .footer button {
+    .home-footer button {
         font-size: .75em;
     }
 }
