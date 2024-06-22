@@ -1,27 +1,25 @@
-<form data-controller="draft_picks" action="">
-    <input type="hidden" name="selected-draft-picks-team-1" value="" />
-    <input type="hidden" name="selected-draft-picks-team-2" value="" />
-    <div id="draft-picks">
-        <div class="draft-picks-content">
-            <div style="margin-right: 100px;">
-                <div>
-                    <p>Select your pick(s):</p>
-                    <p><%= @selectedTeam1 %></p>
-                    <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam1))) %>
-                </div>
-            </div>
+<input type="hidden" name="selected-draft-picks-team-1" value="" />
+<input type="hidden" name="selected-draft-picks-team-2" value="" />
+<div id="draft-picks" data-controller="draft-picks">
+    <div class="draft-picks-content">
+        <div style="margin-right: 100px;">
             <div>
-                <div style="margin-left: 100px;">
-                    <p>Select your pick(s):</p>
-                    <p><%= @selectedTeam2 %></p>
-                    <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam2))) %>
-                </div>
+                <p>Select your pick(s):</p>
+                <p><%= @selectedTeam1 %></p>
+                <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam1))) %>
             </div>
         </div>
-        <div class="draft-picks-footer">
-            <button type="submit" data-home-target="button" disabled>Submit</button>
-            <a href="/home"><button type="button">Start a New Trade</button></a>
+        <div>
+            <div style="margin-left: 100px;">
+                <p>Select your pick(s):</p>
+                <p><%= @selectedTeam2 %></p>
+                <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam2))) %>
+            </div>
         </div>
     </div>
-</form>
+    <div class="draft-picks-footer">
+        <button type="button" data-draft-picks-target="button" disabled>Submit</button>
+        <a href="/home"><button type="button">Start a New Trade</button></a>
+    </div>
+</div>
 
