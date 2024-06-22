@@ -1,5 +1,5 @@
 <div class="draft-pick-checkboxes">
     <% @picks.each do |pick| %>
-    <%= render(DraftPickComponent.new(pick: pick)) %>
+    <%= render(DraftPickComponent.new(pick: pick, grid: @grid)) %>
     <% end %>
 </div>
