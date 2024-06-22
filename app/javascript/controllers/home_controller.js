@@ -12,7 +12,7 @@ export default class extends Controller {
 
     selectTeam(event) {
         const id = event.currentTarget.id.replaceAll("-", " ")
-        const parts = /(.*?)\s([12])/gis.exec(id);
+        const parts = /(.*?)\s([12])/gis.exec(id)
 
         const team = parts[1]
         const grid = parts[2]
