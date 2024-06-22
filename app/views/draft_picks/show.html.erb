@@ -1,6 +1,6 @@
 <div id="draft-picks" data-controller="draft-picks">
     <div class="draft-picks-content">
-        <div style="margin-right: 100px;">
+        <div>
             <div>
                 <p>Select your pick(s):</p>
                 <p><%= @selectedTeam1 %></p>
@@ -9,7 +9,7 @@
             </div>
         </div>
         <div>
-            <div style="margin-left: 100px;">
+            <div>
                 <p>Select your pick(s):</p>
                 <p><%= @selectedTeam2 %></p>
                 <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam2), grid: 2)) %>

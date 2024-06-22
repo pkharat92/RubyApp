@@ -21,6 +21,7 @@ p {
 
 .draft-picks-content > div {
     justify-content: center;
+    margin: 0 100px;
 }
 
 .draft-picks-content > div > div {
