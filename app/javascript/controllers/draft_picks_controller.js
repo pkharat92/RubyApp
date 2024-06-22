@@ -28,4 +28,20 @@ export default class extends Controller {
         console.log(`Team A: ${this.pickValues[1]}`)
         console.log(`Team B: ${this.pickValues[2]}`)
     }
+
+    evaluateTrade() {
+        const redText = "display: flex; color: red;"
+        const greenText = "display: flex; color: green;"
+
+        const valueTeamA = this.pickValues[2] - this.pickValues[1];
+        const valueTeamB = this.pickValues[1] - this.pickValues[2];
+        
+        const valueElementTeamA = document.querySelector("p[id='value-grid-1']")
+        valueElementTeamA.innerText = (valueTeamA > 0 ? "+" : "") + valueTeamA.toString()
+        valueElementTeamA.style = valueTeamA > valueTeamB ? greenText : redText;
+
+        const valueElementTeamB = document.querySelector("p[id='value-grid-2']")
+        valueElementTeamB.innerText = (valueTeamB > 0 ? "+" : "") + valueTeamB.toString()
+        valueElementTeamB.style = valueTeamA > valueTeamB ? redText : greenText;
+    }
 }

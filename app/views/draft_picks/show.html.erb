@@ -5,6 +5,7 @@
                 <p>Select your pick(s):</p>
                 <p><%= @selectedTeam1 %></p>
                 <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam1), grid: 1)) %>
+                <p id="value-grid-1" style="display: none;"></p>
             </div>
         </div>
         <div>
@@ -12,11 +13,12 @@
                 <p>Select your pick(s):</p>
                 <p><%= @selectedTeam2 %></p>
                 <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam2), grid: 2)) %>
+                <p id="value-grid-2" style="display: none;"></p>
             </div>
         </div>
     </div>
     <div class="draft-picks-footer">
-        <button type="button" data-draft-picks-target="button" disabled>Submit</button>
+        <button type="button" data-draft-picks-target="button" data-action="click->draft-picks#evaluateTrade" disabled>Submit</button>
         <a href="/home"><button type="button">Start a New Trade</button></a>
     </div>
 </div>
