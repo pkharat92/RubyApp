@@ -127,8 +127,8 @@ module HomeHelper
           },
           {
             "uri" => "team-logos/saints.webp",
-            "alt" => "New Orlean Saints logo",
-            "id" => "New-Orlean-Saints-#{grid}"
+            "alt" => "New Orleans Saints logo",
+            "id" => "New-Orleans-Saints-#{grid}"
           },
           {
             "uri" => "team-logos/buccaneers.webp",
