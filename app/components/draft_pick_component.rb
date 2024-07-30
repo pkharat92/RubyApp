@@ -2,8 +2,8 @@
 
 class DraftPickComponent < ViewComponent::Base
   def initialize(pick:, grid:)
-    @number = pick["number"]
-    @value = pick["value"]
+    @number = pick.pick
+    @value = pick.value
     @grid = grid
   end
 

@@ -1,18 +1,6 @@
 module DraftPicksHelper
   def getPicks(team:)
-    return [
-      {
-        "number" => 1,
-        "value" => 500,
-      },
-      {
-        "number" => 33,
-        "value" => 300
-      },
-      {
-        "number" => 65,
-        "value" => 100
-      }
-    ]
+    team = Team.find_by(name: team)
+    return DraftPick.where(team_id: team.id).order(round: :asc)
   end
 end
