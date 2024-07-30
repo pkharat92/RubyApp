@@ -24,9 +24,6 @@ export default class extends Controller {
         }
 
         this.buttonTarget.disabled = this.pickValues[1] == 0 || this.pickValues[2] == 0
-
-        console.log(`Team A: ${this.pickValues[1]}`)
-        console.log(`Team B: ${this.pickValues[2]}`)
     }
 
     evaluateTrade() {
@@ -37,11 +34,11 @@ export default class extends Controller {
         const valueTeamB = this.pickValues[1] - this.pickValues[2];
         
         const valueElementTeamA = document.querySelector("p[id='value-grid-1']")
-        valueElementTeamA.innerText = (valueTeamA > 0 ? "+" : "") + valueTeamA.toString()
+        valueElementTeamA.innerText = (valueTeamA > 0 ? "+" : "") + valueTeamA.toFixed(1)
         valueElementTeamA.style = valueTeamA > valueTeamB ? greenText : redText;
 
         const valueElementTeamB = document.querySelector("p[id='value-grid-2']")
-        valueElementTeamB.innerText = (valueTeamB > 0 ? "+" : "") + valueTeamB.toString()
+        valueElementTeamB.innerText = (valueTeamB > 0 ? "+" : "") + valueTeamB.toFixed(1)
         valueElementTeamB.style = valueTeamA > valueTeamB ? redText : greenText;
     }
 }
