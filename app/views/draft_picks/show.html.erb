@@ -4,7 +4,7 @@
             <div>
                 <p>Select your pick(s):</p>
                 <p><%= @selectedTeam1 %></p>
-                <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam1), grid: 1)) %>
+                <%= render(DraftPicksContainerComponent.new(picks: getPicks(teamName: @selectedTeam1), grid: 1)) %>
                 <p id="value-grid-1" style="display: none;"></p>
             </div>
         </div>
@@ -12,7 +12,7 @@
             <div>
                 <p>Select your pick(s):</p>
                 <p><%= @selectedTeam2 %></p>
-                <%= render(DraftPicksContainerComponent.new(picks: getPicks(team: @selectedTeam2), grid: 2)) %>
+                <%= render(DraftPicksContainerComponent.new(picks: getPicks(teamName: @selectedTeam2), grid: 2)) %>
                 <p id="value-grid-2" style="display: none;"></p>
             </div>
         </div>
