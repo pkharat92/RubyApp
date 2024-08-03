@@ -1,0 +1,7 @@
+west:
+  id: 1
+  name: "west"
+
+north:
+  id: 2
+  name: "north"
