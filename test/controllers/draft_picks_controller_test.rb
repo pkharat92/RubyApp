@@ -10,4 +10,14 @@ class DraftPicksControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
+
+  test "get show failure" do
+    get draftpicks_url, params:
+    {
+      "selected-team-1" => nil,
+      "selected-team-2" => nil
+    }
+
+    assert_response 400
+  end
 end
