@@ -9,6 +9,7 @@ class DraftPicksControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_response :success
+    assert_select "p", "Select your pick(s):"
   end
 
   test "get show failure" do
