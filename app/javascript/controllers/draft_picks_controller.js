@@ -35,14 +35,14 @@ export default class extends Controller {
         this.calculateGainLossPercentages()
 
         const tradeResultsElement = document.querySelector("div[id='trade-results']")
-        tradeResultsElement.style = "display: flex;"
+        tradeResultsElement.style = "display: flex !important;"
     }
 
     showDraftPickTotals() {
-        const draftPickTotalsElementTeamA = document.querySelector("p[id='draft-pick-total-grid-1']")
+        const draftPickTotalsElementTeamA = document.querySelector("span[id='draft-pick-total-grid-1']")
         draftPickTotalsElementTeamA.innerText = this.pickValues[1].toFixed(1)
 
-        const draftPickTotalsElementTeamB = document.querySelector("p[id='draft-pick-total-grid-2']")
+        const draftPickTotalsElementTeamB = document.querySelector("span[id='draft-pick-total-grid-2']")
         draftPickTotalsElementTeamB.innerText = this.pickValues[2].toFixed(1)
     }
 
@@ -50,10 +50,10 @@ export default class extends Controller {
         const percentageTeamA = (this.pickValues[2] - this.pickValues[1]) / this.pickValues[1] * 100
         const percentageTeamB = (this.pickValues[1] - this.pickValues[2]) / this.pickValues[2] * 100
 
-        const percentageElementTeamA = document.querySelector("p[id='gain-loss-percentage-grid-1']")
+        const percentageElementTeamA = document.querySelector("span[id='gain-loss-percentage-grid-1']")
         percentageElementTeamA.innerText = percentageTeamA.toFixed(2) + "%"
 
-        const percentageElementTeamB = document.querySelector("p[id='gain-loss-percentage-grid-2']")
+        const percentageElementTeamB = document.querySelector("span[id='gain-loss-percentage-grid-2']")
         percentageElementTeamB.innerText = percentageTeamB.toFixed(2) + "%"
     }
 }

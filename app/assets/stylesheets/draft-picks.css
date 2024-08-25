@@ -1,21 +1,29 @@
-#draft-picks, #draft-pick-selections, .selection, #draft-picks-buttons,
+#draft-picks, #draft-picks >div, #draft-picks > div > div, 
+#draft-pick-selections, .selection, #draft-picks-buttons,
 #trade-results > div, #draft-pick-totals > div, #gain-loss-percentages > div
 {
     display: flex;
 }
 
 #trade-results {
-    display: none;
+    display: none !important;
 }
 
-#draft-picks, .selection,
+#draft-picks, .selection, #draft-picks > div, #draft-picks > div > div,
 #trade-results, #trade-results > div {
     flex-direction: column;
 }
 
 #draft-picks {
-    justify-content: center;
     align-items: center;
+}
+
+#draft-picks > div {
+    align-items: start;
+}
+
+#draft-picks > div > div {
+    align-items: end;
 }
 
 .header {
@@ -34,18 +42,17 @@
 }
 
 #draft-picks-buttons {
-    justify-content: right;
-    width: 35%;
-    margin-top: 2em;
-}
-
-#draft-picks-buttons button {
-    font-size: 1em;
-    margin: 0 .2em;
+    margin: 1em 6em 0 0;
 }
 
 button {
     cursor: pointer;
+    margin-right: 5px;
+}
+
+#trade-results {
+    margin: 1em 0 0 6em;
+    align-items: start !important;
 }
 
 @media screen and (width <= 1024px) and (height > 600px) {
