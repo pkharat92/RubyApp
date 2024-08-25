@@ -23,22 +23,37 @@ export default class extends Controller {
             this.pickValues[grid] -= Number(event.currentTarget.value)
         }
 
+        this.checkCalculateButton()
+    }
+
+    checkCalculateButton() {
         this.buttonTarget.disabled = this.pickValues[1] == 0 || this.pickValues[2] == 0
     }
 
     evaluateTrade() {
-        const redText = "display: flex; color: red;"
-        const greenText = "display: flex; color: green;"
+        this.showDraftPickTotals()
+        this.calculateGainLossPercentages()
 
-        const valueTeamA = this.pickValues[2] - this.pickValues[1];
-        const valueTeamB = this.pickValues[1] - this.pickValues[2];
-        
-        const valueElementTeamA = document.querySelector("p[id='value-grid-1']")
-        valueElementTeamA.innerText = (valueTeamA > 0 ? "+" : "") + valueTeamA.toFixed(1)
-        valueElementTeamA.style = valueTeamA > valueTeamB ? greenText : redText;
+        const tradeResultsElement = document.querySelector("div[id='trade-results']")
+        tradeResultsElement.style = "display: flex;"
+    }
 
-        const valueElementTeamB = document.querySelector("p[id='value-grid-2']")
-        valueElementTeamB.innerText = (valueTeamB > 0 ? "+" : "") + valueTeamB.toFixed(1)
-        valueElementTeamB.style = valueTeamA > valueTeamB ? redText : greenText;
+    showDraftPickTotals() {
+        const draftPickTotalsElementTeamA = document.querySelector("p[id='draft-pick-total-grid-1']")
+        draftPickTotalsElementTeamA.innerText = this.pickValues[1].toFixed(1)
+
+        const draftPickTotalsElementTeamB = document.querySelector("p[id='draft-pick-total-grid-2']")
+        draftPickTotalsElementTeamB.innerText = this.pickValues[2].toFixed(1)
+    }
+
+    calculateGainLossPercentages() {
+        const percentageTeamA = (this.pickValues[2] - this.pickValues[1]) / this.pickValues[1] * 100
+        const percentageTeamB = (this.pickValues[1] - this.pickValues[2]) / this.pickValues[2] * 100
+
+        const percentageElementTeamA = document.querySelector("p[id='gain-loss-percentage-grid-1']")
+        percentageElementTeamA.innerText = percentageTeamA.toFixed(2) + "%"
+
+        const percentageElementTeamB = document.querySelector("p[id='gain-loss-percentage-grid-2']")
+        percentageElementTeamB.innerText = percentageTeamB.toFixed(2) + "%"
     }
 }

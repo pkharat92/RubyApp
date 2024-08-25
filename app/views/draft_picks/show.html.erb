@@ -1,25 +1,43 @@
 <div id="draft-picks" data-controller="draft-picks">
-    <div class="draft-picks-content">
-        <div>
-            <div>
-                <p>Select your pick(s):</p>
-                <p><%= @selectedTeam1 %></p>
-                <%= render(DraftPicksContainerComponent.new(picks: getPicks(teamName: @selectedTeam1), grid: 1)) %>
-                <p id="value-grid-1" style="display: none;"></p>
-            </div>
+    <div id="draft-pick-selections">
+        <div class="selection">
+            <p class="header">Select your pick(s):</p>
+            <p class="header"><%= @selectedTeam1 %></p>
+            <%= render(DraftPicksContainerComponent.new(picks: getPicks(teamName: @selectedTeam1), grid: 1)) %>
         </div>
-        <div>
-            <div>
-                <p>Select your pick(s):</p>
-                <p><%= @selectedTeam2 %></p>
-                <%= render(DraftPicksContainerComponent.new(picks: getPicks(teamName: @selectedTeam2), grid: 2)) %>
-                <p id="value-grid-2" style="display: none;"></p>
-            </div>
+        <div class="selection">
+            <p class="header">Select your pick(s):</p>
+            <p class="header"><%= @selectedTeam2 %></p>
+            <%= render(DraftPicksContainerComponent.new(picks: getPicks(teamName: @selectedTeam2), grid: 2)) %>
         </div>
     </div>
-    <div class="draft-picks-footer">
-        <button type="button" data-draft-picks-target="button" data-action="click->draft-picks#evaluateTrade" disabled>Submit</button>
+    <div id="draft-picks-buttons">
+        <button type="button" data-draft-picks-target="button" data-action="click->draft-picks#evaluateTrade" disabled>Calculate</button>
         <a href="/home"><button type="button">Start a New Trade</button></a>
+    </div>
+    <div id="trade-results">
+        <div id="draft-pick-totals">
+            <p class="header">Draft Pick Totals</p>
+            <div>
+                <p><%= @selectedTeam1 %>:&nbsp;&nbsp;</p>
+                <p id="draft-pick-total-grid-1"></p>
+            </div>
+            <div>
+                <p><%= @selectedTeam2 %>:&nbsp;&nbsp;</p>
+                <p id="draft-pick-total-grid-2"></p>
+            </div>
+        </div>
+        <div id="gain-loss-percentages">
+            <p class="header">Gain/Loss &#37;</p>
+            <div>
+                <p><%= @selectedTeam1 %>:&nbsp;&nbsp;</p>
+                <p id="gain-loss-percentage-grid-1"></p>
+            </div>
+            <div>
+                <p><%= @selectedTeam2 %>:&nbsp;&nbsp;</p>
+                <p id="gain-loss-percentage-grid-2"></p>
+            </div>
+        </div>
     </div>
 </div>
 

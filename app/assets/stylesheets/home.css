@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-p {
+.header {
     text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: bold;
@@ -75,7 +75,7 @@ p {
         width: 80%;
     }
 
-    p {
+    .header {
         font-size: .75em;
     }
 
